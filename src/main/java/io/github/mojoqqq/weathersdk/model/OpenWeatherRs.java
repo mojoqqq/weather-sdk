@@ -1,0 +1,114 @@
+package io.github.mojoqqq.weathersdk.model;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+
+import java.util.List;
+
+@Data
+public class OpenWeatherRs {
+
+        @JsonProperty("coord")
+        private Coord coord;
+
+        @JsonProperty("weather")
+        private List<Weather> weather;
+
+        @JsonProperty("main")
+        private Main main;
+
+        @JsonProperty("visibility")
+        private int visibility;
+
+        @JsonProperty("wind")
+        private Wind wind;
+
+        @JsonProperty("dt")
+        private long datetime;
+
+        @JsonProperty("sys")
+        private Sys sys;
+
+        @JsonProperty("timezone")
+        private int timezone;
+
+        @JsonProperty("name")
+        private String name;
+
+    @Data
+        public static class Coord {
+            @JsonProperty("lon")
+            private double lon;
+
+            @JsonProperty("lat")
+            private double lat;
+        }
+
+        @Data
+        public static class Weather {
+            @JsonProperty("id")
+            private int id;
+
+            @JsonProperty("main")
+            private String main;
+
+            @JsonProperty("description")
+            private String description;
+
+            @JsonProperty("icon")
+            private String icon;
+
+        }
+    @Data
+        public static class Main {
+            @JsonProperty("temp")
+            private double temp;
+
+            @JsonProperty("feels_like")
+            private double feelsLike;
+
+            @JsonProperty("temp_min")
+            private double tempMin;
+
+            @JsonProperty("temp_max")
+            private double tempMax;
+
+            @JsonProperty("pressure")
+            private int pressure;
+
+            @JsonProperty("humidity")
+            private int humidity;
+
+            @JsonProperty("sea_level")
+            private int seaLevel;
+
+            @JsonProperty("grnd_level")
+            private int grndLevel;
+
+        }
+    @Data
+        public static class Wind {
+            @JsonProperty("speed")
+            private double speed;
+
+            @JsonProperty("deg")
+            private int deg;
+
+            @JsonProperty("gust")
+            private double gust;
+
+        }
+    @Data
+        public static class Sys {
+            @JsonProperty("country")
+            private String country;
+
+            @JsonProperty("sunrise")
+            private long sunrise;
+
+            @JsonProperty("sunset")
+            private long sunset;
+        }
+
+
+}
